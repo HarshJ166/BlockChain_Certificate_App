@@ -1,0 +1,60 @@
+blockchain-certificate-dapp
+├── client
+│   ├── public
+│   │   ├── index.html
+│   │   ├── favicon.ico
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   └── robots.txt
+│   ├── src
+│   │   ├── components
+│   │   │   └── ui
+│   │   │       ├── alert-dialog.jsx
+│   │   │       ├── alert.jsx
+│   │   │       ├── avatar.jsx
+│   │   │       ├── badge.jsx
+│   │   │       ├── button.jsx
+│   │   │       ├── card.jsx
+│   │   │       ├── dialog.jsx
+│   │   │       ├── dropdown-menu.jsx
+│   │   │       ├── input.jsx
+│   │   │       ├── label.jsx
+│   │   │       ├── Navbar.js
+│   │   │       ├── navigation-menu.jsx
+│   │   │       ├── progress.jsx
+│   │   │       ├── select.jsx
+│   │   │       ├── separator.jsx
+│   │   │       └── ...
+│   │   ├── hooks
+│   │   │   └── use-toast.js
+│   │   ├── lib
+│   │   │   └── utils.js
+│   │   ├── pages
+│   │   │   ├── CollegePanel.js
+│   │   │   ├── Dashboard.js
+│   │   │   └── VerifyPanel.js
+│   │   ├── index.js
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── App.test.js
+│   │   ├── Certification.json
+│   │   ├── index.css
+│   │   ├── logo.svg
+│   │   ├── reportWebVitals.js
+│   │   └── setupTests.js
+│   ├── next.config.js
+│   ├── package.json
+│   ├── README.md
+│   ├── components.json
+│   ├── jsconfig.json
+│   ├── package-lock.json
+│   ├── tailwind.config.js
+│   └── web3.js
+├── contracts
+│   └── Certification.sol
+├── migrations
+│   └── 2_deploy_contracts.js
+├── test
+├── tree.py
+└── truffle-config.js
