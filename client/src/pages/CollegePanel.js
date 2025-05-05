@@ -68,8 +68,8 @@ const CollegePanel = ({ contract, account }) => {
     issueDate: new Date().toISOString().split("T")[0],
     grade: "Distinction",
     department: "Department of IT",
-    signature1: "Prof. Alexander Wilson",
-    signature2: "Dr. Elizabeth Morrison",
+    signature1: "Dr.Bhavesh Patel",
+    signature2: "Dr.DJ",
   });
 
   const gradeOptions = [
@@ -318,10 +318,14 @@ const CollegePanel = ({ contract, account }) => {
             <CardContent className="flex justify-center p-8">
               <div
                 ref={certificateRef}
-                className="w-full aspect-video bg-white shadow-lg rounded-md overflow-hidden"
-                style={{ maxWidth: "900px" }}
+                className="w-full bg-white shadow-lg rounded-md overflow-hidden"
+                style={{
+                  maxWidth: "900px",
+                  aspectRatio: "1.414/1", // A4 ratio
+                  minHeight: "600px", // Ensure minimum height to fit all content
+                }}
               >
-                <div className="relative border-12 border-blue-50 h-full p-8 flex flex-col">
+                <div className="relative border-8 border-blue-50 h-full p-6 flex flex-col justify-between">
                   {/* Background/Watermark */}
                   <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
                     <div className="text-9xl font-serif transform rotate-45">
@@ -330,104 +334,113 @@ const CollegePanel = ({ contract, account }) => {
                   </div>
 
                   {/* Corner Decorations */}
-                  <div className="absolute top-4 left-4 w-24 h-24 border-t-4 border-l-4 border-blue-700 opacity-20"></div>
-                  <div className="absolute top-4 right-4 w-24 h-24 border-t-4 border-r-4 border-blue-700 opacity-20"></div>
-                  <div className="absolute bottom-4 left-4 w-24 h-24 border-b-4 border-l-4 border-blue-700 opacity-20"></div>
-                  <div className="absolute bottom-4 right-4 w-24 h-24 border-b-4 border-r-4 border-blue-700 opacity-20"></div>
+                  <div className="absolute top-4 left-4 w-16 h-16 border-t-4 border-l-4 border-blue-700 opacity-20"></div>
+                  <div className="absolute top-4 right-4 w-16 h-16 border-t-4 border-r-4 border-blue-700 opacity-20"></div>
+                  <div className="absolute bottom-4 left-4 w-16 h-16 border-b-4 border-l-4 border-blue-700 opacity-20"></div>
+                  <div className="absolute bottom-4 right-4 w-16 h-16 border-b-4 border-r-4 border-blue-700 opacity-20"></div>
 
-                  {/* Header */}
-                  <div className="text-center mb-4">
-                    <div className="flex justify-center mb-4">
-                      <div className="h-20 w-20 rounded-full bg-blue-800 flex items-center justify-center">
-                        <Award size={40} className="text-white" />
-                      </div>
-                    </div>
-                    <div className="text-2xl font-serif text-blue-900 font-bold">
-                      {form.org || "Cambridge University"}
-                    </div>
-                    <div className="text-sm text-gray-500 mb-1">
-                      {form.department}
-                    </div>
-                    <div className="mx-auto w-48 h-px bg-gray-200 my-3"></div>
-                  </div>
-
-                  {/* Certificate Content */}
-                  <div className="text-center flex-grow flex flex-col justify-center">
-                    <div className="mb-3">
-                      <div className="text-xl uppercase tracking-widest text-gray-600">
-                        Certificate of
-                      </div>
-                      <div className="text-4xl font-serif font-bold text-blue-900 mb-6">
-                        Academic Achievement
-                      </div>
-                    </div>
-
-                    <div className="text-sm text-gray-500 mb-1">
-                      This certifies that
-                    </div>
-                    <div className="text-3xl font-serif font-bold text-blue-900 mb-2">
-                      {form.name || "Student Name"}
-                    </div>
-
-                    <div className="text-sm text-gray-500 my-3">
-                      has successfully completed the course of study in
-                    </div>
-                    <div className="text-2xl font-serif font-semibold text-blue-800 mb-2">
-                      {form.course || "Course Name"}
-                    </div>
-
-                    {form.proficiencies && (
-                      <div className="text-md mt-2 mb-3">
-                        <span className="text-gray-600">
-                          with specialization in:{" "}
-                        </span>
-                        <span className="italic">{form.proficiencies}</span>
-                      </div>
-                    )}
-
-                    <div className="flex justify-center items-center gap-3 my-4">
-                      <Badge
-                        variant="outline"
-                        className="text-base py-1.5 border-blue-200 text-blue-800"
-                      >
-                        {form.grade || "Distinction"}
-                      </Badge>
-                    </div>
-
-                    <div className="text-sm text-gray-500 mt-3">
-                      Issued on{" "}
-                      {form.issueDate || new Date().toLocaleDateString()}
-                    </div>
-                  </div>
-
-                  {/* Footer/Signatures */}
-                  <div className="mt-6">
-                    <div className="grid grid-cols-3 gap-4">
-                      <div className="text-center">
-                        <div className="h-px w-full bg-gray-300 mb-1"></div>
-                        <div className="text-sm font-medium">
-                          {form.signature1 || "Program Director"}
+                  <div className="flex flex-col h-full">
+                    {/* Header */}
+                    <div className="text-center mb-3">
+                      <div className="flex justify-center mb-2">
+                        <div className="h-16 w-16 rounded-full bg-blue-800 flex items-center justify-center">
+                          <Award size={32} className="text-white" />
                         </div>
+                      </div>
+                      <div className="text-xl font-serif text-blue-900 font-bold">
+                        {form.org || "Cambridge University"}
+                      </div>
+                      <div className="text-sm text-gray-500 mb-1">
+                        {form.department}
+                      </div>
+                      <div className="mx-auto w-48 h-px bg-gray-200 my-2"></div>
+                    </div>
+                    {/* Certificate Content */}
+                    {/* Certificate Content */}
+                    <div className="text-center flex-grow">
+                      <div className="mb-2">
+                        <div className="text-lg uppercase tracking-widest text-gray-600">
+                          Certificate of
+                        </div>
+                        <div className="text-3xl font-serif font-bold text-blue-900 mb-3">
+                          Academic Achievement
+                        </div>
+                      </div>
+
+                      <div className="text-sm text-gray-500 mb-1">
+                        This certifies that
+                      </div>
+                      <div className="text-2xl font-serif font-bold text-blue-900 mb-1">
+                        {form.name || "Student Name"}
+                      </div>
+
+                      <div className="text-sm text-gray-500 my-2">
+                        has successfully completed the course of study in
+                      </div>
+                      <div className="text-xl font-serif font-semibold text-blue-800 mb-1">
+                        {form.course || "Course Name"}
+                      </div>
+
+                      {form.proficiencies && (
+                        <div className="text-sm mt-2 mb-2">
+                          <span className="text-gray-600">
+                            with specialization in:{" "}
+                          </span>
+                          <span className="italic">{form.proficiencies}</span>
+                        </div>
+                      )}
+
+                      <div className="flex justify-center items-center gap-3 my-3">
+                        <Badge
+                          variant="outline"
+                          className="text-base py-1 border-blue-200 text-blue-800"
+                        >
+                          {form.grade || "Distinction"}
+                        </Badge>
+                      </div>
+
+                      <div className="text-sm text-gray-500 mt-2">
+                        Issued on{" "}
+                        {form.issueDate || new Date().toLocaleDateString()}
+                      </div>
+                    </div>
+                    {/* Footer/Signatures */}
+                    <div className="mt-4 pt-2">
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="text-center">
+                          <div className="h-px w-full bg-gray-300 mb-1"></div>
+                          <div className="text-sm font-medium">
+                            {form.signature1 || "Program Director"}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            Course Director
+                          </div>
+                        </div>
+
+                        <div className="text-center flex flex-col items-center">
+                          <div className="border border-dashed border-gray-300 px-2 py-1 rounded text-xs mb-1">
+                            Certificate ID: {form.certificateId || "CERT-12345"}
+                          </div>
+                          <div className="text-xs text-gray-500">
+                            Blockchain Verified
+                          </div>
+                        </div>
+
+                        <div className="text-center">
+                          <div className="h-px w-full bg-gray-300 mb-1"></div>
+                          <div className="text-sm font-medium">
+                            {form.signature2 || "University Registrar"}
+                          </div>
+                          <div className="text-xs text-gray-500">Registrar</div>
+                        </div>
+                      </div>
+
+                      {/* Institutional footer */}
+                      <div className="text-center mt-2 pt-1 border-t border-gray-200">
                         <div className="text-xs text-gray-500">
-                          Course Director
+                          {form.org} | {form.department} | Certificate Valid as
+                          of {form.issueDate}
                         </div>
-                      </div>
-
-                      <div className="text-center flex flex-col items-center">
-                        <div className="border border-dashed border-gray-300 px-3 py-1 rounded text-xs mb-1">
-                          Certificate ID: {form.certificateId || "CERT-12345"}
-                        </div>
-                        <div className="text-xs text-gray-500">
-                          Blockchain Verified
-                        </div>
-                      </div>
-
-                      <div className="text-center">
-                        <div className="h-px w-full bg-gray-300 mb-1"></div>
-                        <div className="text-sm font-medium">
-                          {form.signature2 || "University Registrar"}
-                        </div>
-                        <div className="text-xs text-gray-500">Registrar</div>
                       </div>
                     </div>
                   </div>
