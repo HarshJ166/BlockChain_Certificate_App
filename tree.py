@@ -106,3 +106,4 @@ if __name__ == "__main__":
         f.write('\n'.join(tree_content))
     
     print(f"Directory tree has been saved to {output_file}")
+    print("Exclusions: node_modules, env, .git, __pycache__, .pytest_cache, dist, build, venv, .venv, eggs, .eggs, .npm, .yarn")
